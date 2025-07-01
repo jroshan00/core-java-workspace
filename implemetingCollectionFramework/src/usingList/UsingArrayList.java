@@ -21,7 +21,6 @@ public class UsingArrayList {
 		System.out.println("size of list list l1 : "+l1.size());
 		System.out.println("size of list list l2 : "+l2.size());
 		
-		
 	}
 
 }

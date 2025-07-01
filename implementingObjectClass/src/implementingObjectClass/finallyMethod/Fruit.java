@@ -1,4 +1,4 @@
-package usingFinallyMethod;
+package implementingObjectClass.finallyMethod;
 
 public class Fruit {
 	private String category;

@@ -1,4 +1,4 @@
-package usingCloneMethod;
+package implementingObjectClass.cloneMethod;
 
 public class Laptop implements Cloneable {
 	private String brand;
@@ -48,6 +48,7 @@ public class Laptop implements Cloneable {
 	*/
 	@Override
 	protected Object clone() throws CloneNotSupportedException {
+		System.out.println("Clone method is called");
 		return super.clone();
 	}
 	

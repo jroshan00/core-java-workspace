@@ -1,4 +1,4 @@
-package usingtoStringMethod;
+package implementingObjectClass.toString;
 
 public class Main {
 	public static void main(String[] args) {

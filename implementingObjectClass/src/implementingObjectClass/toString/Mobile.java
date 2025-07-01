@@ -1,4 +1,4 @@
-package usingtoStringMethod;
+package implementingObjectClass.toString;
 
 public class Mobile {
 	private String model;
