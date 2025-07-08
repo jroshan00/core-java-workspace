@@ -5,14 +5,18 @@ public abstract class Mobile implements Device {
 	String network;
 	boolean wifi;
 	String camera;
-
-	public Mobile() {}
+	public Mobile() {
+		super();
+	}
 	
 	public Mobile(String brand,String network) {
 		this();
 		this.brand=brand;
 		this.network=network;
 	}
+	
+	public abstract void start();
+	public abstract void stop();
 	
 	//CopyConstructor
 	public Mobile(Mobile m1) {

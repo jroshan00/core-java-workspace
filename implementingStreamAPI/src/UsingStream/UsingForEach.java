@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.stream.*;
 
 
-public class UsingPredicate {
+public class UsingForEach {
 
 	public static void main(String[] args) {
 		
