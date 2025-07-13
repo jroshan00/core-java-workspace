@@ -11,37 +11,32 @@ public class Program21 {
 	
 	static Scanner sc=new Scanner(System.in);
 	public static void main(String[] args) {
-		System.out.println("Enter the value of n :");
-		int n=sc.nextInt();
-		System.out.println("first "+ "{ "+n+" }"+" Fibonacci numbers :"+fib(n));
-	}
-	
-	public static List<Integer> fib(int n) {
-		List<Integer> fibList=new ArrayList<>();
-		int first=0;
-		fibList.add(0);
-		if(n==1) return fibList;
-		int second=1;
-		fibList.add(1);
-		if(n==2) return fibList;
-		int third=1;
-		fibList.add(1);
-		if(n==3) return fibList;
-		int count=3;
-		for(int i=4;;i++) {
-			first=second;
-			second=third;
-			third=first+second;
-			fibList.add(third);
-			count++;
-			if(count==n) break;
-		}
-		return fibList;
-	}
-	
-	public static List<Integer> getFibInRange(int low,int high){
+		System.out.println("Enter the range:");
+		int range=sc.nextInt();
+		System.out.println("Fib series in given range : "+getFibInRange(range));
 		
 	}
 	
+	public static List<Integer> getFibInRange(int range){
+		List<Integer> list=new ArrayList<>();
+		for(int i=1; ;i++) {
+			if(fib(i)<=range)
+				list.add(fib(i));
+			else 
+				break;
+		}
+		return list;
+	}
+	
+	//--> Using recursion 
+	public static int fib(int n) {
+		if(n==1) {
+			return 0;
+		}
+		if(n==2) {
+			return 1;
+		}
+		return fib(n-1)+fib(n-2);
+	}
 
 }
