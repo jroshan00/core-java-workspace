@@ -2,7 +2,7 @@ package implementingList.linkedList;
 
 import java.util.LinkedList;
 
-public class Main {
+public class Main1 {
 	 public static void main(String[] args) {
 		MySinglyLinkedList<Integer> mySinglyLinkedList=new MySinglyLinkedList<>();
 		LinkedList<Integer> linkedList=new LinkedList<>();
