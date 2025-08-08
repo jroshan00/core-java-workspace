@@ -2,6 +2,7 @@ package implementingList.linkedList;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+//import java.util.List;
 
 public final class MySinglyLinkedList<E> implements Iterable<E> {
 	private Node<E> head;
@@ -22,7 +23,7 @@ public final class MySinglyLinkedList<E> implements Iterable<E> {
 		if (size < 0 || index >= size || index < 0) {
 			throw new IllegalArgumentException();
 		} else {
-			int x = index - 1;
+			int x = index;
 			while (x > 0) {
 				current = current.next;
 				x--;
@@ -31,24 +32,54 @@ public final class MySinglyLinkedList<E> implements Iterable<E> {
 		return current.data;
 	}
 
+	public E getFirst() {
+		if (head == null) {
+			return null;
+		} else {
+			final Node<E> current = head;
+			return (E) current.data;
+		}
+	}
+
+	public E getLast() {
+		if (head == null)
+			throw new NoSuchElementException();
+		else {
+			Node<E> current = head;
+			while (current.next != null) {
+				current = current.next;
+			}
+			return (E) current.data;
+		}
+	}
+
 	public void add(int index, E value) {
 		if (size == 0 || index >= size || index < 0) {
 			throw new IllegalArgumentException();
 		} else {
-			int x = index-1;
-			Node<E> current = head;
-			while (x > 0) {
-				System.out.println(current.data);
-				current = current.next;
-				System.out.println(x--);
-				
+			Node<E> newNode = new Node<>(value);
+			if (index == 0) {
+				newNode.next = head;
+				head = newNode;
+				size++;
+			} else {
+				Node<E> current = head;
+				Node<E> prev = head;
+				int i = index;
+				int j = index - 1;
+				while (i > 0) {
+					current = current.next;
+					i--;
+				}
+				while (j > 0) {
+					prev = prev.next;
+					j--;
+				}
+				newNode.next = current;
+				prev.next = newNode;
+				size++;
 			}
-			final Node<E> newNode = new Node<>(value);
-			//System.out.println(newNode.data);
-			Node<E> next = current.next.next;
-			current.data = newNode.data;
-			current.next = next;
-			size++;
+
 		}
 	}
 
@@ -95,27 +126,6 @@ public final class MySinglyLinkedList<E> implements Iterable<E> {
 		}
 	}
 
-	public E getFirst() {
-		if (head == null) {
-			return null;
-		} else {
-			final Node<E> current = head;
-			return (E) current.data;
-		}
-	}
-
-	public E getLast() {
-		if (head == null)
-			throw new NoSuchElementException();
-		else {
-			Node<E> current = head;
-			while (current.next != null) {
-				current = current.next;
-			}
-			return (E) current.data;
-		}
-	}
-
 	public E removeFirst() {
 		if (head == null)
 			throw new NoSuchElementException();
@@ -127,19 +137,23 @@ public final class MySinglyLinkedList<E> implements Iterable<E> {
 		}
 	}
 
-	@SuppressWarnings("unchecked")
 	public E removeLast() {
+		final Node<E> last;
 		if (head == null)
 			throw new NoSuchElementException();
-		else {
-			Node current = head;
+		else if (head.next == null) {
+			last = head;
+			head = null;
+			return last.data;
+		} else {
+			Node<E> current = head;
 			while (current.next.next != null) {
 				current = current.next;
 			}
-			final Node<E> last = current.next;
+			last = current.next;
 			current.next = null;
 			size--;
-			return (E) last.data;
+			return last.data;
 
 		}
 	}
@@ -158,7 +172,6 @@ public final class MySinglyLinkedList<E> implements Iterable<E> {
 
 		@Override
 		public E next() {
-
 			return get(index++);
 		}
 
@@ -168,6 +181,22 @@ public final class MySinglyLinkedList<E> implements Iterable<E> {
 	public Iterator<E> iterator() {
 
 		return new MySinglyLinkedListIterator();
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("[");
+		Node<E> temp = head;
+		while (temp != null) {
+			sb.append(temp.data);
+			if (temp.next == null) {
+				return sb.append("]").toString();
+			}
+			sb.append(",").append(" ");
+			temp = temp.next;
+		}
+		return "[]";
 	}
 
 }

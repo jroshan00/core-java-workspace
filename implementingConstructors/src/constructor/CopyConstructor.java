@@ -13,7 +13,7 @@ public class CopyConstructor {
 		
 	}
 	
-	//parameterized constructor
+	//Shallow Copying
 	CopyConstructor(ConstructorChaining c){
 		this.name=c.name;
 		this.age=c.age;

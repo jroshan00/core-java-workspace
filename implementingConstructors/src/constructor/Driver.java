@@ -35,7 +35,13 @@ public class Driver {
 		System.out.println(ss1.getDetails());
 		System.out.println(ss2.getDetails());
 		System.out.println(ss3.getDetails());	
-		System.out.println("__________________Start Ends_____________");
+		System.out.println("\n______________________________________\n");
+		System.out.println(ss3.getDetails());
+		s3.name="Lux Cozi";
+		s3.age=90;
+		System.out.println(s3.getDetails());
+		System.out.println(ss3.getDetails());
+		System.out.println("__________________Main Ends_____________");
 	}
 
 }
