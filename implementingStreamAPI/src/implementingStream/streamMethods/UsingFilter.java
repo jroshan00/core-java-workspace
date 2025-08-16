@@ -1,4 +1,4 @@
-package UsingStream;
+package implementingStream.streamMethods;
 
 import java.util.ArrayList;
 import java.util.Collection;

@@ -1,4 +1,4 @@
-package UsingStream;
+package implementingStream.streamMethods;
 
 import java.util.Collection;
 import java.util.Iterator;

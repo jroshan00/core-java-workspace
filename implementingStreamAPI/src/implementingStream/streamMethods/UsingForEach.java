@@ -1,4 +1,4 @@
-package UsingStream;
+package implementingStream.streamMethods;
 import java.util.Arrays;
 //import java.util.function.*;
 import java.util.stream.*;

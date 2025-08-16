@@ -107,7 +107,7 @@ public class Program3 {
 //			head=head.next;
 //		}
 		System.out.println("============================");
-		System.out.println("heae"head);
+		System.out.println("head-> "+head);
 		deleteDuplicateNode(head);
 		Node temp1=head;
 		while(temp1!=null) {
