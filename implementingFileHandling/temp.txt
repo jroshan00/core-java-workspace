@@ -1,0 +1,2 @@
+Student [fname=Bob, lname=Tim, age=35, address=USA]
+Student [fname=Tim , lname=Crook, age=24, address=C1B/Panchsheel Colony]
